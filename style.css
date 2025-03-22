@@ -1,3 +1,9 @@
+@font-face {
+    font-family: google sans;
+    src: url(https://fonts.googleapis.com/css2?family=Liter&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap);
+}
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -13,13 +19,15 @@ body {
 }
 
 .sidebar {
-    width: 200px;
+    width: 100px;
     background: #f0e7ff;
-    padding: 20px;
-    display: flex;
+    display: block;
     flex-direction: column;
     overflow: auto;
     max-height: 100vh;
+    margin-right: 10px;
+    position: sticky;
+    padding: 10px;
 }
 
 .sidebar ul {
@@ -28,33 +36,64 @@ body {
 }
 
 .sidebar li {
-    padding: 10px;
+    width: 90px;
     cursor: pointer;
     transition: background 0.3s;
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-family: google sans, sans-serif;
+    margin: 0px 0px 20px 0px;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    line-height: 30px;
+}
+
+#home {
+    background-color: rgb(220, 218, 245);
+    border-radius: 15px;
+}
+
+#find {
+    background-color: rgb(241, 211, 249);
+    padding-top: 10px;
+}
+
+#needicon {
+    padding-top: 40px;
 }
 
 .sidebar li:hover, .sidebar .active {
     background: #d4c1ff;
     border-radius: 8px;
+    font-weight: bold;
 }
 
 .content {
     flex-grow: 1;
-    padding: 20px;
+    padding: 0px;
+    margin-left: 10px;
+    width: 85%;
+
 }
 
 .hero {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     background: #f8f5fc;
-    padding: 40px;
     border-radius: 12px;
+}
+
+.text {
+    width: 500px;
 }
 
 .text h1 {
     font-size: 100px;
-    margin-bottom: 10px;
+    font-weight: 100;
+    font-family: google sans, sans-serif;
 }
 
 .text p {
@@ -126,11 +165,30 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 cột */
     gap: 16px;
+    margin-bottom: 20px;
 }
+
+.quay-lai {
+    text-align: center;
+}
+
+.quay-lai a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    background-color: pink;
+    padding: 12px 12px;
+    border-radius: 10px;
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column; 
         align-items: center;
+
+    }
+    .sidebar {
+        display: none;
     }
 
     .card {
